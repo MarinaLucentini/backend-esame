@@ -1,6 +1,6 @@
 package elementoMultimediale;
 
-public class Audio extends Elemento implements Volume {
+public class Audio extends Elemento implements Volume, Played {
 
 
     public Audio(String titolo, TipoElemento tipoElemento, int durata, int volume) {
@@ -20,14 +20,12 @@ public class Audio extends Elemento implements Volume {
 
     }
 
+
     @Override
     public void play() {
-
         String puntoEsclamativo = "!";
         for (int i = 0; i < getDurata(); i++) {
             System.out.println("Il titolo della canzone che hai scelto è " + getTitolo() + " volume: " + puntoEsclamativo.repeat(getVolume()));
         }
-
     }
-
 }

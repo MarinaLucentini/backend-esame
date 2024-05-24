@@ -18,7 +18,6 @@ public abstract class Elemento extends ElementoMultimediale {
         this.volume = volume;
     }
 
-    public abstract void play();
 
     public int getDurata() {
         return durata;

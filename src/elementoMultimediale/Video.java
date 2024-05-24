@@ -1,6 +1,6 @@
 package elementoMultimediale;
 
-public class Video extends Elemento implements Volume, Luminosità {
+public class Video extends Elemento implements Volume, Luminosità, Played {
     private int luminosità;
 
     public Video(String titolo, TipoElemento tipoElemento, int durata, int volume) {
@@ -12,7 +12,7 @@ public class Video extends Elemento implements Volume, Luminosità {
         String puntoEsclamativo = "!";
         String asterisco = "*";
         for (int i = 0; i < getDurata(); i++) {
-            System.out.println("Il titolo della canzone che hai scelto è " + getTitolo() + " volume: " + puntoEsclamativo.repeat(getVolume()) + " luminosità: " + asterisco.repeat(this.luminosità));
+            System.out.println("Il titolo del video che hai scelto è " + getTitolo() + " volume: " + puntoEsclamativo.repeat(getVolume()) + " luminosità: " + asterisco.repeat(this.luminosità));
         }
     }
 
