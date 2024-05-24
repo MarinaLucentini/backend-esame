@@ -27,7 +27,11 @@ public class Main {
                     String titolo = scanner.nextLine();
                     TipoElemento tipoElemento = TipoElemento.valueOf(tipo.toUpperCase());
                     Immagine immagine1 = new Immagine(titolo, tipoElemento);
+                    System.out.println("Quanto è luminosa l'immagine?");
+                    int luminosità = Integer.parseInt(scanner.nextLine());
+                    immagine1.setLuminosità(luminosità);
                     arrayElementoMultimediale[i] = immagine1;
+                   
                     break;
                 }
                 case "video": {
