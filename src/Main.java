@@ -21,7 +21,7 @@ public class Main {
             System.out.println("Dimmi il tipo di file che vuoi inserire. Puoi scegliere tra immagine, video e audio");
             String tipo = scanner.nextLine();
             switch (tipo) {
-                case "IMMAGINE": {
+                case "immagine": {
 
                     System.out.println("Dimmi il titolo dell'immagine che hai scelto");
                     String titolo = scanner.nextLine();
@@ -30,7 +30,7 @@ public class Main {
                     arrayElementoMultimediale[i] = immagine1;
                     break;
                 }
-                case "VIDEO": {
+                case "video": {
 
                     System.out.println("Dimmi il titolo del video che hai scelto");
                     String titolo = scanner.nextLine();
@@ -49,7 +49,7 @@ public class Main {
                     arrayElementoMultimediale[i] = video1;
                     break;
                 }
-                case "AUDIO": {
+                case "audio": {
 
                     System.out.println("Dimmi il titolo del file audio che hai scelto");
                     String titolo = scanner.nextLine();
@@ -68,10 +68,26 @@ public class Main {
                     break;
                 }
             }
-            
+
 
         }
 
+        while (true) {
+            System.out.println("Dimmi che tipo di file vuoi visualizzare, scegli un numero da 1 a 5 o 0 per uscire");
+            int numeroselezionato2 = Integer.parseInt(scanner.nextLine());
+            if (numeroselezionato2 == 0) {
+                break;
+            } else if (numeroselezionato2 >= 1 && numeroselezionato2 <= 5) {
+                ElementoMultimediale elemento = arrayElementoMultimediale[numeroselezionato2 - 1];
+                if (elemento instanceof Played) {
+                    ((Played) elemento).play();
+                } else {
+                    ((Show) elemento).show();
+                }
+            }
+
+
+        }
         scanner.close();
     }
 }

@@ -1,6 +1,6 @@
 package elementoMultimediale;
 
-public class Immagine extends ElementoMultimediale implements Luminosità {
+public class Immagine extends ElementoMultimediale implements Luminosità, Show {
     private int luminosità;
 
     public Immagine(String titolo, TipoElemento tipoElemento) {
@@ -25,6 +25,7 @@ public class Immagine extends ElementoMultimediale implements Luminosità {
         this.luminosità = luminosità;
     }
 
+    @Override
     public void show() {
         String asterisco = "*";
         System.out.println("L'immagine che hai scelto è " + getTitolo() + " luminisità: " + asterisco.repeat(this.luminosità));
