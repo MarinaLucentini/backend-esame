@@ -1,6 +1,6 @@
 package elementoMultimediale;
 
-public class Audio extends Elemento implements Volume, Played {
+public class Audio extends Elemento implements Played {
 
 
     public Audio(String titolo, TipoElemento tipoElemento, int durata, int volume) {
@@ -10,13 +10,13 @@ public class Audio extends Elemento implements Volume, Played {
 
     @Override
     public void abbassaVolume(int volume) {
-        setVolume(volume--);
+        setVolume(--volume);
 
     }
 
     @Override
     public void alzaVolume(int volume) {
-        setVolume(volume++);
+        setVolume(++volume);
 
     }
 

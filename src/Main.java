@@ -1,5 +1,6 @@
 import elementoMultimediale.*;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -31,7 +32,7 @@ public class Main {
                     int luminosità = Integer.parseInt(scanner.nextLine());
                     immagine1.setLuminosità(luminosità);
                     arrayElementoMultimediale[i] = immagine1;
-                   
+
                     break;
                 }
                 case "video": {
@@ -85,6 +86,25 @@ public class Main {
                 ElementoMultimediale elemento = arrayElementoMultimediale[numeroselezionato2 - 1];
                 if (elemento instanceof Played) {
                     ((Played) elemento).play();
+                    System.out.println("Vuoi alzare o abbassare il volume? Premi y o n");
+                    String modificavolume = scanner.nextLine();
+
+                    if (Objects.equals(modificavolume, "y")) {
+                        System.out.println("Questo è il volume premi 0 per abbassarlo 1 per alzarlo");
+                        int alzaOAbbassaIlVolume = Integer.parseInt(scanner.nextLine());
+                        if (alzaOAbbassaIlVolume == 1) {
+
+                            int volume = ((Elemento) elemento).getVolume();
+                            ((Played) elemento).alzaVolume(volume);
+                        } else if (alzaOAbbassaIlVolume == 0) {
+                            int volume = ((Elemento) elemento).getVolume();
+                            ((Played) elemento).abbassaVolume(volume);
+                        } else {
+                            System.out.println("Errore!");
+                        }
+
+                    }
+
                 } else {
                     ((Show) elemento).show();
                 }

@@ -1,6 +1,6 @@
 package elementoMultimediale;
 
-public class Video extends Elemento implements Volume, Luminosità, Played {
+public class Video extends Elemento implements Luminosità, Played {
     private int luminosità;
 
     public Video(String titolo, TipoElemento tipoElemento, int durata, int volume) {
@@ -26,13 +26,13 @@ public class Video extends Elemento implements Volume, Luminosità, Played {
 
     @Override
     public void abbassaVolume(int volume) {
-        setVolume(volume--);
+        setVolume(--volume);
 
     }
 
     @Override
     public void alzaVolume(int volume) {
-        setVolume(volume++);
+        setVolume(++volume);
     }
 
     @Override
